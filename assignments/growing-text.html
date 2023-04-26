@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Growing text</title>
+</head>
+<body>
+    <p id="p1" style="text-align:center"> Hisham Moideen </p>
+    <script>
+    var size=10;
+    var mywait=setInterval(growtext,100);
+    function growtext()
+    {
+        if(size<51)
+        {
+            size+=1;
+            document.getElementById("p1").innerHTML="Hisham Moideen";
+            document.getElementById("p1").style.fontSize=(size+ "pt");
+            document.getElementById("p1").style.color="red";
+        }
+        else
+        {
+            clearInterval(mywait);
+            mywait=setInterval(shrinktext,100);
+        }
+    }
+    function shrinktext()
+    {
+        if(size>5)
+        {
+            size-=1;
+            document.getElementById("p1").innerHTML="Hisham Moideen";
+            document.getElementById("p1").style.fontSize=(size+ "pt");
+            document.getElementById("p1").style.color="blue";
+        }
+        else
+        {
+            clearInterval(mywait);
+            mywait=setInterval(growtext,100);
+        }
+    }
+    </script>
+</body>
+</html>
